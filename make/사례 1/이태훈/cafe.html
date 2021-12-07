@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YNC Cafe</title>
+    <style>
+        * {
+            font-family: -apple-system;
+        }
+        input {
+            font-size: 1rem;
+        }
+        select, option {
+            font-size: 1.1rem;
+        }
+        form {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form action="ordersheet.php" method="POST">
+        <h1>YNC Cafe</h1>
+        <input type="checkbox" name="ame">아메리카노
+        <input type="number" name="ame_amount" value="1" min="0" max="99">잔
+        <select name="ame_size" id="">
+            <option value="스몰">스몰</option>
+            <option value="레귤러" selected>레귤러</option>
+            <option value="라지">라지</option>
+        </select>
+        <br>
+
+        <input type="checkbox" name="lat">라떼
+        <input type="number" name="lat_amount" value="1" min="1" max="99">잔
+        <select name="lat_size" id="">
+            <option value="스몰">스몰</option>
+            <option value="레귤러" selected>레귤러</option>
+            <option value="라지">라지</option>
+        </select>
+        <br>
+
+        <input type="checkbox" name="ice">아이스티
+        <input type="number" name="ice_amount" value="1" min="1" max="99">잔
+        <select name="ice_size" id="">
+            <option value="스몰">스몰</option>
+            <option value="레귤러" selected>레귤러</option>
+            <option value="라지">라지</option>
+        </select>
+        <br>
+
+        <input type="checkbox" name="cho">초코라떼
+        <input type="number" name="cho_amount" value="1" min="1" max="99">잔
+        <select name="cho_size" id="">
+            <option value="스몰">스몰</option>
+            <option value="레귤러" selected>레귤러</option>
+            <option value="라지">라지</option>
+        </select>
+        <br>
+
+        <input type="submit" value="주문하기">
+    </form>
+</body>
+</html>

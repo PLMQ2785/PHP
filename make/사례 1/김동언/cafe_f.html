@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="1280px;">
+    <title></title>
+    <style media="screen">
+      @import url(//fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+      @import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
+      body {
+        background-color:#white;
+      }
+      .align {
+        margin:0 auto;
+        width:800px;
+        margin-top: 50px;
+      }
+      .align > table {
+        width:800px;
+        height:600px;
+      }
+      .header {
+        width:60%;
+        height: 100px;
+        font-family: 'Italianno';
+        font-size:18px;
+      }
+      .header > div {
+        border:1px solid #d2c4dd;
+        margin:10px;
+        border-radius: 10px;
+        box-shadow: 1px 1px 10px 5px #d2c4dd;
+      }
+      .menuselect > button{
+        background-color: white;
+        border: 1px solid #d2c4dd;
+        margin: 10px;
+        border-radius: 10px;
+        box-shadow: 1px 1px 10px 5px #d2c4dd;
+      }
+      .menuselect > button:hover{
+        background-color: #f2f2f2;
+      }
+      .menudetail{
+        background-color: white;
+        border: 1px solid #d2c4dd;
+        margin-left:10px;
+        height:88%;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        box-shadow: 1px 1px 10px 5px #d2c4dd;
+        font-family: 'Nanum Pen Script';
+      }
+      .menuselect > img{
+        background-size:100%;
+      }
+      .menudetail > div {
+        background-color: white;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-bottom:15px;
+        border-radius: 10px;
+        border: 1px solid #d2c4dd;
+        font-size : 20px;
+      }
+      .menudetail > div > p{
+        margin:3%;
+      }
+      #goback{
+        background-color:white;
+        border-radius: 5px;
+        margin-left: 10px;
+        margin-bottom:3px;
+        padding:5px;
+        width:97%;
+        box-shadow: 1px 1px 10px 5px #d2c4dd;
+        border: 1px solid #d2c4dd;
+      }
+      #goback:hover{
+        background-color:#d2c4dd;
+      }
+    </style>
+    <script type="text/javascript">
+      function ame_detail(){
+          if(document.getElementById("americano").checked == false){
+              document.getElementById("americano").checked = true;
+              document.getElementById("americanodetail").style.display = 'block';
+          }
+          else{
+            document.getElementById("americano").checked = false;
+            document.getElementById("americanodetail").style.display = 'none';
+            document.getElementsByName("count")[0].value= 0;
+          }
+      }
+      function lat_detail(){
+          if(document.getElementById("latte").checked == false){
+              document.getElementById("latte").checked = true;
+              document.getElementById("lattedetail").style.display = 'block';
+          }
+          else{
+            document.getElementById("latte").checked = false;
+            document.getElementById("lattedetail").style.display = 'none';
+            document.getElementsByName("count")[1].value= 0;
+          }
+      }
+      function it_detail(){
+          if(document.getElementById("icetea").checked == false){
+              document.getElementById("icetea").checked = true;
+              document.getElementById("iceteadetail").style.display = 'block';
+          }
+          else{
+            document.getElementById("icetea").checked = false;
+            document.getElementById("iceteadetail").style.display = 'none';
+            document.getElementsByName("count")[2].value= 0;
+          }
+      }
+      function cc_detail(){
+          if(document.getElementById("choco").checked == false){
+              document.getElementById("choco").checked = true;
+              document.getElementById("chocodetail").style.display = 'block';
+          }
+          else{
+            document.getElementById("choco").checked = false;
+            document.getElementById("chocodetail").style.display = 'none';
+            document.getElementsByName("count")[3].value= 0;
+          }
+      }
+    </script>
+  </head>
+  <body>
+    <form class="" action="cafe_b.php" method="post">
+    <div class="align">
+      <table>
+        <tr>
+          <td colspan="2" class="header">
+            <div style="text-align:center;">
+                <h1>Is this a cafe...?</h1>
+            </div>
+          </td>
+          <td rowspan="3">
+            <div class="menudetail">
+              <h2 style="text-align:center;">주문내역</h3>
+              <div id="americanodetail" style="display:none;">
+                <p>&ensp;> 아메리카노 (1300원)</p>
+                <p>&ensp;개수 : <input type="text" name="count[]" value="0" size="10"></p>
+                <p>&ensp;사이즈 :
+                  <select class="" name="size[]">
+                    <option value="t">Tall</option>
+                    <option value="g">Grande</option>
+                  </select>
+                  Grande : +500원
+                </p>
+              </div>
+              <div id="lattedetail" style="display:none;">
+                <p>&ensp;> 라떼 (2800원)</p>
+                <p>&ensp;개수 : <input type="text" name="count[]" value="0" size="10"></p>
+                <p>&ensp;사이즈 :
+                  <select class="" name="size[]">
+                    <option value="t">Tall</option>
+                    <option value="g">Grande</option>
+                  </select>
+                  Grande : +500원
+                </p>
+              </div>
+              <div id="iceteadetail" style="display:none;">
+                <p>&ensp;> 아이스티 (2300원)</p>
+                <p>&ensp;개수 : <input type="text" name="count[]" value="0" size="10"></p>
+                <p>&ensp;사이즈 :
+                  <select class="" name="size[]">
+                    <option value="t">Tall</option>
+                    <option value="g">Grande</option>
+                  </select>
+                  Grande : +500원
+                </p>
+              </div>
+              <div id="chocodetail" style="display:none;">
+                <p>&ensp;> 초코 (2800원)</p>
+                <p>&ensp;개수 : <input type="text" name="count[]" value="0" size="10"></p>
+                <p>&ensp;사이즈 :
+                  <select class="" name="size[]">
+                    <option value="t">Tall</option>
+                    <option value="g">Grande</option>
+                  </select>
+                  Grande : +500원
+                </p>
+              </div>
+            </div>
+            <input type="submit" name="" id="goback"value="주문하기">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="menuselect">
+              <button type="button" id="a_btn" onclick="ame_detail();">
+              <input type="checkbox" name="menu[]" id="americano" value="americano" style="float:left;">
+              <img src="americano.png" alt="">
+              </button>
+            </div>
+          </td>
+          <td>
+            <div class="menuselect">
+              <button type="button" id="l_btn" onclick="lat_detail();">
+              <input type="checkbox" name="menu[]" id="latte" value="latte" style="float:left;">
+              <img src="latte.png" alt="">
+              </button>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="menuselect">
+              <button type="button" id="i_btn" onclick="it_detail();">
+              <input type="checkbox" name="menu[]" id="icetea" value="icetea" style="float:left;">
+              <img src="icetea.png" alt="">
+              </button>
+            </div>
+          </td>
+          <td>
+            <div class="menuselect">
+              <button type="button" id="c_btn" onclick="cc_detail();">
+              <input type="checkbox" name="menu[]" id="choco" value="choco" style="float:left;">
+              <img src="choco.png" alt="">
+              </button>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+    </form>
+  </body>
+</html>
